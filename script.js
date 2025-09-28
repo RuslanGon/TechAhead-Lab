@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const importBtn = document.getElementById("importBtn");
     const fileInput = document.getElementById("fileInput");
   
-    // Показ/скрытие блока деталей представителя
     form.elements["hasRepresentative"].forEach(radio => {
       radio.addEventListener("change", () => {
         const repDetails = document.getElementById("repDetails");
@@ -65,7 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         });
   
-        // Обновить отображение repDetails, если нужно
         const repDetails = document.getElementById("repDetails");
         if (form.elements["hasRepresentative"].value === "Yes") {
           repDetails.style.display = "block";
