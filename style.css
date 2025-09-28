@@ -1,23 +1,97 @@
+/* Базовые настройки */
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif;
     margin: 2rem;
+    background: #f7f9fc;
+    color: #333;
   }
   
+  /* Форма */
   form {
-    max-width: 500px;
-    padding: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    max-width: 650px;
+    padding: 2rem;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   }
   
+  /* Заголовок */
+  h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #1e3a8a;
+  }
+  
+  /* Разделы */
+  fieldset {
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    background: #fafbfc;
+  }
+  
+  legend {
+    font-weight: bold;
+    color: #1f2937;
+    padding: 0 0.5rem;
+  }
+  
+  /* Поля */
   label {
     display: block;
     margin-bottom: 1rem;
+    font-size: 0.95rem;
   }
   
+  input,
+  select {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    margin-top: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: border 0.2s, box-shadow 0.2s;
+  }
+  
+  input:focus,
+  select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
+    outline: none;
+  }
+  
+  /* Чекбоксы и радио */
+  input[type="checkbox"],
+  input[type="radio"] {
+    width: auto;
+    margin-right: 0.5rem;
+  }
+  
+  /* Кнопки */
   button {
     margin-right: 1rem;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
+    background: #2563eb;
+    color: #fff;
+    transition: background 0.25s, transform 0.15s;
+  }
+  
+  button:hover {
+    background: #1e40af;
+    transform: translateY(-2px);
+  }
+  
+  button:active {
+    transform: translateY(0);
+    background: #1d4ed8;
   }
   
