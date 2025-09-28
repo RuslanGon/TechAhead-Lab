@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TC108 Web Form (Pages 3–4)</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <h1>NYC TC108 Web Form</h1>
+  <form id="tc108-form">
+    <fieldset>
+      <legend>1. Property Identification</legend>
+      <label>
+        Borough:
+        <select name="borough" required>
+          <option value="">— Select —</option>
+          <option value="Bronx">Bronx</option>
+          <option value="Brooklyn">Brooklyn</option>
+          <option value="Manhattan">Manhattan</option>
+          <option value="Queens">Queens</option>
+          <option value="Staten Island">Staten Island</option>
+        </select>
+      </label>
+      <label>
+        Block:
+        <input type="text" name="block" required />
+      </label>
+      <label>
+        Lot:
+        <input type="text" name="lot" required />
+      </label>
+      <label>
+        Assessment Year:
+        <input type="text" name="assessmentYear" placeholder="e.g. 2024/25" required />
+      </label>
+      <label>
+        Full Address:
+        <input type="text" name="propertyAddress" required />
+      </label>
+      <label>
+        ZIP Code:
+        <input type="text" name="zipCode" required />
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Applicant</legend>
+      <label>
+        Applicant’s Name:
+        <input type="text" name="applicantName" required />
+      </label>
+
+      <div>
+        Applicant Description:
+        <label><input type="checkbox" name="applicantDesc" value="Owner" /> Owner</label>
+        <label><input type="checkbox" name="applicantDesc" value="Tenant paying all taxes" /> Tenant paying all taxes</label>
+        <label>
+          <input type="checkbox" name="applicantDesc" value="Other" /> Other
+          <input type="text" name="applicantDescOther" placeholder="Specify if Other" />
+        </label>
+      </div>
+
+      <label>
+        Condo board of managers as agent:
+        <input type="checkbox" name="condoBoardAgent" value="yes" />
+      </label>
+      <div>
+        Source of Board’s authority (if applicable):
+        <label><input type="checkbox" name="boardAuthority" value="By-laws" /> By-laws</label>
+        <label><input type="checkbox" name="boardAuthority" value="Individual authorization" /> Individual authorization</label>
+        <label><input type="checkbox" name="boardAuthority" value="Power-of-Attorney" /> Power-of-Attorney</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Contact Information</legend>
+      <label>
+        Name of Individual or Firm:
+        <input type="text" name="contactName" required />
+      </label>
+      <label>
+        Group # (if any):
+        <input type="text" name="contactGroup" />
+      </label>
+      <label>
+        Phone Number:
+        <input type="text" name="phone" required />
+      </label>
+      <label>
+        Mailing Address:
+        <input type="text" name="mailingAddress" required />
+      </label>
+      <label>
+        Email Address:
+        <input type="email" name="email" required />
+      </label>
+
+      <div>
+        Will a representative handle this application?
+        <label><input type="radio" name="hasRepresentative" value="No" checked /> No</label>
+        <label><input type="radio" name="hasRepresentative" value="Yes" /> Yes</label>
+      </div>
+
+      <div id="repDetails" style="display: none;">
+        <label>
+          Representative type:
+          <select name="repType">
+            <option value="">— Select —</option>
+            <option value="Attorney">Attorney</option>
+            <option value="Other">Other</option>
+          </select>
+        </label>
+        <label>
+          If Other, specify:
+          <input type="text" name="repTypeOther" />
+        </label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>4. Valuation Claim</legend>
+      <label>
+        Year:
+        <input type="text" name="valuationYear" required />
+      </label>
+      <label>
+        Borough:
+        <select name="valuationBorough" required>
+          <option value="">— Select —</option>
+          <option value="Bronx">Bronx</option>
+          <option value="Brooklyn">Brooklyn</option>
+          <option value="Manhattan">Manhattan</option>
+          <option value="Queens">Queens</option>
+          <option value="Staten Island">Staten Island</option>
+        </select>
+      </label>
+      <label>
+        Block:
+        <input type="text" name="valuationBlock" required />
+      </label>
+      <label>
+        Lot:
+        <input type="text" name="valuationLot" required />
+      </label>
+      <label>
+        Group #:
+        <input type="text" name="valuationGroup" />
+      </label>
+    </fieldset>
+    <div style="margin-top: 1em;">
+      <button type="button" id="saveBtn">Save (Download JSON)</button>
+      <button type="button" id="importBtn">Import (Upload JSON)</button>
+      <input type="file" id="fileInput" accept="application/json" style="display: none;" />
+    </div>
+  </form>
+
+  <script src="./script.js"></script>
+</body>
+</html>
